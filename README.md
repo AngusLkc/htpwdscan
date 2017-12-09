@@ -43,45 +43,42 @@ htpwdScan
 	
 	Target:(设定目标)
 	  -u REQUESTURL		设定目标URL, 示例：-u="https://www.test.com/login.php"
-	  -f REQUESTFILE			从文件导入HTTP请求
-	  -https							当使用-f从文件导入HTTP请求时，启用https协议
-	  -get							使用GET方法，默认：POST
-	  -basic  [ ...]					HTTP Basic爆破。示例：-basic users.dic pass.dic
+	  -f REQUESTFILE	从文件导入HTTP请求
+	  -https		当使用-f从文件导入HTTP请求时，启用https协议
+	  -get			使用GET方法，默认：POST
+	  -basic  [ ...]	HTTP Basic爆破。示例：-basic users.dic pass.dic
 	
 	Dictionary:(字典选项)
 	  -d Param=DictFile [Param=DictFile ...]
-			设定字典文件，支持哈希函数如md5, md5_16,sha1。示例：-d user=users.dic pass=md5(pass.dic)
+	  	设定字典文件，支持哈希函数如md5, md5_16,sha1。示例：-d user=users.dic pass=md5(pass.dic)
 	
 	Detect:(标记处理)
-	  -no302								无视302跳转, 默认302敏感
-	  -err ERR [ERR ...]				响应文本破解失败标记，示例：-err "user not exist" "password wrong"
-	  -suc SUC [SUC ...]				响应文本中的破解成功标记，示例：-suc "welcome," "admin"
-	  -herr HERR						响应HTTP头的破解失败标记
-	  -hsuc HSUC						响应HTTP头的破解成功标记
-	  -rtxt RetryText					响应文本中的重试标记，出现则重试请求，示例：-rtxt="IP blocked"
-	  -rntxt RetryNoText				响应文本中的重试标记，未出现则重试请求，示例：-rntxt="<body>"
+	  -no302			无视302跳转, 默认302敏感
+	  -err ERR [ERR ...]		响应文本破解失败标记，示例：-err "user not exist" "password wrong"
+	  -suc SUC [SUC ...]		响应文本中的破解成功标记，示例：-suc "welcome," "admin"
+	  -herr HERR			响应HTTP头的破解失败标记
+	  -hsuc HSUC			响应HTTP头的破解成功标记
+	  -rtxt RetryText		响应文本中的重试标记，出现则重试请求，示例：-rtxt="IP blocked"
+	  -rntxt RetryNoText		响应文本中的重试标记，未出现则重试请求，示例：-rntxt="<body>"
 	  -rheader RetryHeader		响应头中的重试标记，出现则重试请求，示例：-rheader="Set-Cookie:"
 	  -rnheader RetryNoHeader	响应头中的重试标记，未出现则重试请求，示例：-rheader="HTTP/1.1 200 OK"
 	
 	Proxy and spoof:(代理和欺骗)
-	  -proxy Server:Port			设定少量HTTP代理，示例：-proxy=127.0.0.1:8000,8.8.8.8:8000
+	  -proxy Server:Port		设定少量HTTP代理，示例：-proxy=127.0.0.1:8000,8.8.8.8:8000
 	  -proxylist ProxyListFile	从文件批量导入HTTP代理，示例：-proxylist=proxys.txt
-	  -checkproxy					检查代理服务器的可用性，可用代理输出到001.proxy.servers.txt
-	  -fip								生成随机X-Forwarded-For头欺骗服务器
-	  -fsid FSID						生成随机session ID，示例：-fsid PHPSESSID
-	  -sleep seconds			每次HTTP结束等待seconds秒，避免IP被服务器屏蔽
+	  -checkproxy			检查代理服务器的可用性，可用代理输出到001.proxy.servers.txt
+	  -fip				生成随机X-Forwarded-For头欺骗服务器
+	  -fsid FSID			生成随机session ID，示例：-fsid PHPSESSID
+	  -sleep seconds		每次HTTP结束等待seconds秒，避免IP被服务器屏蔽
 
 	Database attack:(爆破字典)
-	  -database DATABASE	导入社工库中的数据，示例：-database user,pass=csdn.txt
-	  -regex REGEX				从社工库中提取数据的正则表达式，必须分组。示例：-regex="(\S+)\s+(\S+)"
+	  -database DATABASE		导入社工库中的数据，示例：-database user,pass=csdn.txt
+	  -regex REGEX			从社工库中提取数据的正则表达式，必须分组。示例：-regex="(\S+)\s+(\S+)"
 	
 	General:
-	  -t THREADS		工作线程数，默认50
-	  -o OUTPUT		输出文件，默认: 000.Cracked.Passwords.txt
-	  -debug				进入debug模式检查HTTP请求和HTTP响应
-	  -nov					只显示破解成功的条目，不显示进度
-	  -v						显示程序版本号
+	  -t THREADS			工作线程数，默认50
+	  -o OUTPUT			输出文件，默认: 000.Cracked.Passwords.txt
+	  -debug			进入debug模式检查HTTP请求和HTTP响应
+	  -nov				只显示破解成功的条目，不显示进度
+	  -v				显示程序版本号
 
-### 反馈 ###
-
-使用中若发现问题，请反馈给我。  my[at]lijiejie.com [http://www.lijiejie.com](http://www.lijiejie.com)
