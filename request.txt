@@ -1,0 +1,6 @@
+centos6:
+yum install python-setuptools
+curl https://bootstrap.pypa.io/get-pip.py|python -
+
+pip install argparse
+pip install colorama
